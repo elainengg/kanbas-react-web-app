@@ -9,16 +9,8 @@
 export default function Lab1() {
   return (
     <div id="wd-lab1">
-      {/* <h2>Lab 1</h2> 
-      <h6> Needed to:  
-      <ol> Download Node.js and React.js</ol>
-      <ol> Create directories for kanbas-react-web-app </ol>
-      <ol> Create the lab components for Lab: Lab1</ol>
-      </h6> */}
 
-    <div id="wd-lab1">
       <h2>Lab 1</h2>
-    </div>
 
 
       <h3>HTML Examples</h3>
