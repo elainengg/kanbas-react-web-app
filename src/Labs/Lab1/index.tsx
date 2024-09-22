@@ -247,10 +247,9 @@ tag to tell browsers to render the gaps.
         <input type="checkbox" name="check-genre" id="wd-chkbox-fantasy"/>
         <label htmlFor="wd-chkbox-fantasy">Fantasy</label>
 
+
+
         <h4 id="wd-dropdowns">Dropdowns</h4>
-
-
-
         <h5>Select one</h5>
         <label htmlFor="wd-select-one-genre"> Favorite movie genre: </label><br/>
         <select id="wd-select-one-genre">
@@ -260,6 +259,8 @@ tag to tell browsers to render the gaps.
                Science Fiction</option>
            <option value="FANTASY">Fantasy</option>
         </select>
+
+
 
         <h5>Select many</h5>
         <label htmlFor="wd-select-many-genre"> Favorite movie genres: </label><br/>
