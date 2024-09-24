@@ -15,7 +15,6 @@ export default function Kanbas() {
           <td valign="top">
             <Routes>
               <Route path="/" element={<Navigate to="Account" />} />
-              
               <Route path="/Account/*" element={<Account />} />
               <Route path="/Dashboard" element={<Dashboard />} />
               <Route path="/Courses/:cid/*" element={<Courses />} />
@@ -26,4 +25,5 @@ export default function Kanbas() {
         </tr>
       </table>
     </div>
-);}
+  );
+}

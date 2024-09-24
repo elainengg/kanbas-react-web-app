@@ -12,7 +12,7 @@ export default function What() {
           <td valign="top">
             <Routes>
               <Route path="/"
-                     element={<Navigate to="/Kanbas/Dashboard" />} />
+                element={<Navigate to="/Kanbas/Dashboard" />} />
               <Route path="/Signin" element={<Dashboard />} />
 
             </Routes>
@@ -20,4 +20,5 @@ export default function What() {
         </tr>
       </table>
     </div>
-);}
+  );
+}

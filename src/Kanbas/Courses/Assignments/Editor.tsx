@@ -154,35 +154,35 @@ export default function AssignmentEditor() {
             <br />
           </td>
 
-          
+
           <td>
             <label htmlFor="wd-available-until"> Until </label><br />
             <input type="date"
               id="wd-available-until"
               value="2024-05-20" /><br />
           </td>
-          </tr>
-          
-          <hr /> 
+        </tr>
 
-          <tr>
-            
-            <td></td>
-            
-            <td></td>
+        <hr />
 
-          <td> 
-          <button id="wd-cancel-button" onClick={() => alert("Cancelling Assignment Edits")} type="button">
-            Cancel
-          </button>
+        <tr>
 
-          <button id="wd-save-button" onClick={() => alert("Saving Assignment Edits!")} type="button">
-            Save
-          </button>
+          <td></td>
+
+          <td></td>
+
+          <td>
+            <button id="wd-cancel-button" onClick={() => alert("Cancelling Assignment Edits")} type="button">
+              Cancel
+            </button>
+
+            <button id="wd-save-button" onClick={() => alert("Saving Assignment Edits!")} type="button">
+              Save
+            </button>
           </td>
 
-          </tr>
-          
+        </tr>
+
 
 
       </table>
