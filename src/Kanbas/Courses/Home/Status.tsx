@@ -17,12 +17,13 @@ export default function CourseStatus() {
       <div className="d-flex">
 
         <div className="w-50 pe-1">
-          <button className="btn btn-lg btn-secondary w-100 text-nowrap ">
+          <button className="btn btn-lg btn-secondary w-100  "> 
+            {/* text-nowrap omitted bc i didn't like it */}
             <MdDoNotDisturbAlt className="me-2 fs-5" /> Unpublish </button>
         </div>
 
         <div className="w-50">
-          <button className="btn btn-lg btn-success w-100">
+          <button className="btn btn-lg btn-success w-100 ">
             <FaCheckCircle className="me-2 fs-5" /> Publish </button>
         </div>
       </div>
