@@ -4,7 +4,7 @@ import { MdDoNotDisturbAlt } from "react-icons/md";
 export default function ModulesControls() {
     return (
         <div id="wd-modules-controls" className="text-nowrap">
-            
+
             <button id="wd-add-module-btn" className="btn btn-lg btn-danger me-1 float-end">
                 <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
                 Module</button>
@@ -46,12 +46,12 @@ export default function ModulesControls() {
             {/* Implement the View Progress and Collapse All buttons 
       with IDs wd-view-progress and wd-collapse-all */}
 
-<button id="wd-view-progress" className="btn btn-lg btn-secondary me-1 float-end">
-                
+            <button id="wd-view-progress" className="btn btn-lg btn-secondary me-1 float-end">
+
                 View Progress</button>
 
-                <button id="wd-collapse-all" className="btn btn-lg btn-secondary me-1 float-end">
-                
+            <button id="wd-collapse-all" className="btn btn-lg btn-secondary me-1 float-end">
+
                 Collapse All</button>
         </div>
     );
