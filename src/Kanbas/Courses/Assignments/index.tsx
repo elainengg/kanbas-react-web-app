@@ -42,7 +42,7 @@ export default function Assignments() {
                  <b> A1</b></a> <br />
 
               <LessonControlButtons />
-              Multiple Modules | <b> Not Available until</b> May 6 at 12:00am | <br></br>
+              <span className="text-red"> Multiple Modules </span>| <b> Not Available until</b> May 6 at 12:00am | <br></br>
               <b> Due</b> May 13 at 11:59pm | 100 pts <br></br>
 
 
@@ -65,7 +65,7 @@ export default function Assignments() {
                 <b>A2</b></a> <br />
 
               <LessonControlButtons />
-              Multiple Modules | <b> Not Available until</b> May 13 at 12:00am | <br></br>
+              <span className="text-red"> Multiple Modules </span> | <b> Not Available until</b> May 13 at 12:00am | <br></br>
               <b> Due</b> May 20 at 11:59pm | 100 pts <br></br>
 
 
@@ -84,7 +84,7 @@ export default function Assignments() {
                 <b>A3</b></a> <br />
 
               <LessonControlButtons />
-              Multiple Modules | <b> Not Available until</b> May 20 at 12:00am |<br></br>
+              <span className="text-red"> Multiple Modules </span> | <b> Not Available until</b> May 20 at 12:00am |<br></br>
           <b> Due</b> May 27 at 11:59pm | 100 pts <br></br>
 
 
