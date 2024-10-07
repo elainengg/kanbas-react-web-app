@@ -17,7 +17,7 @@ export default function CourseStatus() {
       <div className="d-flex">
 
         <div className="w-50 pe-1">
-          <button className="btn btn-lg btn-secondary w-100  "> 
+          <button className="btn btn-lg btn-secondary w-100  ">
             {/* text-nowrap omitted bc i didn't like it */}
             <MdDoNotDisturbAlt className="me-2 fs-5" /> Unpublish </button>
         </div>
@@ -38,16 +38,16 @@ export default function CourseStatus() {
       {/* Complete the rest of the buttons */}
 
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-      <FaRegEye className="me-2 fs-5" /> View Course Stream </button>
+        <FaRegEye className="me-2 fs-5" /> View Course Stream </button>
 
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-      <TfiAnnouncement className="me-2 fs-5" /> New Announcement </button>
+        <TfiAnnouncement className="me-2 fs-5" /> New Announcement </button>
 
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-      <BsFileBarGraph className="me-2 fs-5" /> New Analytics </button>
+        <BsFileBarGraph className="me-2 fs-5" /> New Analytics </button>
 
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-      <IoIosNotifications className="me-2 fs-5" /> View Course Notifications </button>
+        <IoIosNotifications className="me-2 fs-5" /> View Course Notifications </button>
 
     </div>
 

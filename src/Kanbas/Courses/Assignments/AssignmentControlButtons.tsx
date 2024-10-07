@@ -5,19 +5,22 @@ import { FaP, FaPlus } from "react-icons/fa6";
 
 // stuff in gray box
 export default function AssignmentControlButtons() {
-  return (
-    <div className="float-end">
-          40% of Total 
-   
-   
-        
-      <FaPlus />
-      <IoEllipsisVertical className="fs-4" />
-      
+    return (
+        <div className="float-end">
+            <span className="badge rounded-pill text-bg-secondary border " >40% of Total</span>
 
 
-</div>
 
 
-    
-);}
+
+            <FaPlus />
+            <IoEllipsisVertical className="fs-4" />
+
+
+
+        </div>
+
+
+
+    );
+}

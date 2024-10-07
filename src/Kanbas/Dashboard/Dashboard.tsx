@@ -161,7 +161,7 @@ export default function Dashboard() {
                 <img src="/images/PZ9000.png" width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">
-                    PZ9000 
+                    PZ9000
                   </h5>
                   <p className="wd-dashboard-course-title card-text">
                     Pizza Making    ___________________
@@ -185,7 +185,7 @@ export default function Dashboard() {
                 <img src="/images/PZ9001.png" width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">
-                    PZ9001 
+                    PZ9001
                   </h5>
                   <p className="wd-dashboard-course-title card-text">
                     Pizza Making Lab   ___________________
@@ -209,7 +209,7 @@ export default function Dashboard() {
                 <img src="/images/PZ9100.png" width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">
-                    PZ9100 
+                    PZ9100
                   </h5>
                   <p className="wd-dashboard-course-title card-text">
                     Pizza Making II   ___________________
