@@ -5,7 +5,8 @@
         "course": "RS101",
         "notAvailableUntil": "2024-05-06",
         "dueDate": "2024-05-13",
-        "points": 100
+        "points": 100, 
+        "description": "Propulsion description "
     },
     {
         "_id": "A102",
@@ -13,7 +14,8 @@
         "course": "RS101",
         "notAvailableUntil": "2024-05-06",
         "dueDate": "2024-05-20",
-        "points": 100
+        "points": 100, 
+        "description": "Combustion Analysis descriptio"
     },
     {
         "_id": "A103",
@@ -21,7 +23,8 @@
         "course": "RS101",
         "notAvailableUntil": "2024-05-06",
         "dueDate": "2024-05-27",
-        "points": 100
+        "points": 100, 
+        "description": "Nozzle Design Project description"
     },
     {
         "_id": "A201",
@@ -29,7 +32,8 @@
         "course": "RS102",
         "notAvailableUntil": "2024-05-06",
         "dueDate": "2024-05-13",
-        "points": 100
+        "points": 100, 
+        "description": "Aerodynamics Quiz desc"
     },
     {
         "_id": "A202",
@@ -37,7 +41,8 @@
         "course": "RS102",
         "notAvailableUntil": "2024-05-13",
         "dueDate": "2024-05-20",
-        "points": 100
+        "points": 100, 
+        "description": "Flow Analysis desc"
     },
     {
         "_id": "A203",
@@ -45,7 +50,8 @@
         "course": "RS102",
         "notAvailableUntil": "2024-05-20",
         "dueDate": "2024-05-27",
-        "points": 100
+        "points": 100, 
+        "description": "Heating Analysis desc"
     },
     {
         "_id": "A301",
@@ -53,7 +59,8 @@
         "course": "RS103",
         "notAvailableUntil": "2024-05-27",
         "dueDate": "2024-06-06",
-        "points": 100
+        "points": 100, 
+        "description": "Structural Design Task desc"
     },
     {
         "_id": "A302",
@@ -61,7 +68,8 @@
         "course": "RS103",
         "notAvailableUntil": "2024-05-13",
         "dueDate": "2024-05-20",
-        "points": 100
+        "points": 100, 
+        "description": "Orbital Calculations desc"
     },
     {
         "_id": "A303",
@@ -69,6 +77,7 @@
         "course": "RS103",
         "notAvailableUntil": "2024-05-27",
         "dueDate": "2024-06-06",
-        "points": 100
+        "points": 100, 
+        "description": "Systems Engineering desc"
     }
 ]

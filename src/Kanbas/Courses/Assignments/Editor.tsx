@@ -31,7 +31,7 @@ export default function AssignmentEditor() {
         id="wd-description"
         className="form-control"
       >
-        {"The assignment is available online. Submit a link to the landing page of."}
+        {assignment.description}
       </textarea>
       <br /><br />
 
