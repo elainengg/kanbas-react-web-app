@@ -19,6 +19,7 @@ export default function House() {
       // these are the owners
       owners: ["Alice", "Bob"],
     };
+    console.log(house); 
     return (
         // our house 
       <div id="wd-house">
