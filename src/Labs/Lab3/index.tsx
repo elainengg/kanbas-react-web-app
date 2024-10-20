@@ -13,7 +13,7 @@ import ImpliedReturn from "./ImpliedReturn"
 import TemplateLiterals from "./TemplateLiterals"
 
 
-
+// 2.4
 import SimpleArrays from "./SimpleArrays"
 import ArrayIndexAndLength from "./ArrayIndexAndLength"
 import AddingAndRemovingToFromArrays from "./AddingAndRemovingToFromArrays"
@@ -31,8 +31,17 @@ import Destructing from "./Destructing"
 import FunctionDestructing from "./FunctionDestructing"
 import DestructingImports from "./DestructingImports"
 
+// 2.5
 import Classes from "./Classes"
 import Styles from "./Styles"
+
+// 2.6
+import Add from "./Add";
+import Square from "./Square";
+
+import Highlight from "./Highlight";
+import AddPathParameters from "./AddPathParameters"
+import PathParameters from "./PathParameters"
 
 export default function Lab3() {
   return (
@@ -67,6 +76,23 @@ export default function Lab3() {
       <DestructingImports/>
       <Classes/>
       <Styles/>
+
+
+      <Add a={3} b={4} />
+      <h4>Square of 4</h4>
+      {/* Children  is 4*/}
+      <Square>4</Square>
+      <hr />
+      <Highlight>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipitratione eaque illo minus cum, saepe totam
+        vel nihil repellat nemo explicabo excepturi consectetur. Modi omnis minus sequi maiores, provident voluptates.
+     </Highlight>
+     <PathParameters/> 
+
+     
+
+      
+
     </div>
   );
 }
