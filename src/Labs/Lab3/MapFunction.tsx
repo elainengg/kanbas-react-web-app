@@ -5,17 +5,16 @@ export default function MapFunction() {
     const squares = numberArray1.map(square);
     const cubes = numberArray1.map((a) => a * a * a); // a^3 everything
     return (
-      <div id="wd-map-function">
-        <h4>Map Function</h4>
-        squares = {squares} <br />
-        cubes = {cubes} <br /> 
-        Todos:
-        <ol>
-          {todos.map((todo) => (
-            <li>{todo}</li> // just makes these into list 
-          ))}
-        </ol> <hr/>
-      </div>
+        <div id="wd-map-function">
+            <h4>Map Function</h4>
+            squares = {squares} <br />
+            cubes = {cubes} <br />
+            Todos:
+            <ol>
+                {todos.map((todo) => (
+                    <li>{todo}</li> // just makes these into list 
+                ))}
+            </ol> <hr />
+        </div>
     );
-  }
-  
+}

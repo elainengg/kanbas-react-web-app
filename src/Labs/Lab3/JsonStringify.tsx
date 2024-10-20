@@ -3,11 +3,10 @@ export default function JsonStringify() {
     return (
         // converts data structs into formatted strings 
         // now has brackets and commas
-      <div className="wd-json-stringify">
-        <h3>JSON Stringify</h3>
-        squares = {JSON.stringify(squares)}
-        <hr />
-      </div>
+        <div className="wd-json-stringify">
+            <h3>JSON Stringify</h3>
+            squares = {JSON.stringify(squares)}
+            <hr />
+        </div>
     );
-  }
-  
+}

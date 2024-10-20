@@ -6,10 +6,10 @@ export default function FindIndex() {
 
     return (
         <div id="wd-find-index-function">
-          <h4>Find Index Function</h4>
-          
-          fourIndex = {fourIndex} <br /> 
-          string3Index = {string3Index} <hr />
+            <h4>Find Index Function</h4>
+
+            fourIndex = {fourIndex} <br />
+            string3Index = {string3Index} <hr />
         </div>
         // finds the index that contains '4', which is 2
         // finds the index that contains 'string3', which is 1

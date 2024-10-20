@@ -16,8 +16,8 @@ export default function DestructingImports() {
                 <tbody>
                     {/* see next code block */}
                     {/* first row */}
-                    <tr> 
-                    {/* columns of first row */}
+                    <tr>
+                        {/* columns of first row */}
 
                         <td>Math.add(2, 3) = {Math.add(2, 3)}</td>
                         <td>Matematica.add(2, 3) =
@@ -25,15 +25,15 @@ export default function DestructingImports() {
                         <td>add(2, 3) = {add(2, 3)}</td>
                     </tr>
 
-                    {/* cols of second row */}  
+                    {/* cols of second row */}
                     <tr>
                         <td>Math.subtract(5, 1) = {Math.subtract(5, 1)}</td>
                         <td>Matematica.subtract(5, 1) =
                             {Matematica.subtract(5, 1)}</td>
                         <td>subtract(5, 1) = {subtract(5, 1)}</td>
                     </tr>
-                    {/* cols of third row */}  
-                    
+                    {/* cols of third row */}
+
                     <tr>
                         <td>Math.multiply(3, 4) = {Math.multiply(3, 4)}</td>
                         <td>Matematica.multiply(3, 4) =
@@ -41,7 +41,7 @@ export default function DestructingImports() {
                         <td>multiply(3, 4) = {multiply(3, 4)}</td>
                     </tr>
 
-                    {/* cols of fourth row */}  
+                    {/* cols of fourth row */}
 
                     <tr>
                         <td>Math.divide(8, 2) = {Math.divide(8, 2)}</td>

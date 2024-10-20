@@ -20,7 +20,7 @@ export default function Courses() {
         <FaAlignJustify className="me-4 fs-4 mb-1" />
         {/* this means greater than: &gt aka > symbol */}
         {course && course.name} &gt; {pathname.split("/")[4]}
-        
+
       </h2> <hr />
       <div className="d-flex">
         <div className="d-none d-md-block">

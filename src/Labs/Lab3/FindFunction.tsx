@@ -8,10 +8,10 @@ export default function FindFunction() {
     // find whatever equals string 3 
     const string3 = stringArray1.find((a) => a === "string3");
     return (
-      <div id="wd-find-function">
-        <h4>Find Function</h4>
-        four = {four} <br />
-        string3 = {string3} <hr />
-      </div>
-  );}
-  
+        <div id="wd-find-function">
+            <h4>Find Function</h4>
+            four = {four} <br />
+            string3 = {string3} <hr />
+        </div>
+    );
+}

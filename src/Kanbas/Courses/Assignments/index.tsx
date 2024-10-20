@@ -5,7 +5,7 @@ import AssignmentControlButtons from "./AssignmentControlButtons";
 import { IoMdArrowDropdown } from "react-icons/io";
 import LessonControlButtons from "../Modules/LessonControlButtons";
 import { MdOutlineAssignment } from "react-icons/md";
-import assignmentsData from "../../Database/assignments.json"; 
+import assignmentsData from "../../Database/assignments.json";
 
 export default function Assignments() {
   const { cid } = useParams();
@@ -33,7 +33,7 @@ export default function Assignments() {
               <div className="table wd-lessons list-group rounded-0">
                 {assignments.length === 0 ? (
                   <div className="wd-lesson list-group-item p-3 ps-1 text-center">
-                    <div>No assignments </div> 
+                    <div>No assignments </div>
                   </div>
                 ) : (
                   //  else map 
@@ -48,8 +48,8 @@ export default function Assignments() {
                               <MdOutlineAssignment className="me-2 fs-3" color="green" />
                             </div>
                             <div className="col">
-                              <a 
-                                className="wd-assignment-link" 
+                              <a
+                                className="wd-assignment-link"
                                 href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
                                 style={{ color: 'black', textDecoration: 'none' }}
                               >
