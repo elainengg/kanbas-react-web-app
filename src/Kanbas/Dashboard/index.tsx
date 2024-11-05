@@ -49,7 +49,7 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
           {courses
   .filter((course) =>
     !currentUser || !enrollments
-      ? true // show all courses if currentUser or enrollments is missing
+      ? true // Show all courses if currentUser or enrollments is missing
       : enrollments.some(
           (enrollment) =>
             enrollment.user === currentUser._id &&
