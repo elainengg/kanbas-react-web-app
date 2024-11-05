@@ -1,26 +1,22 @@
 import { IoEllipsisVertical } from "react-icons/io5";
-import GreenCheckmark from "../Modules/GreenCheckmark";
+import { FaPlus } from "react-icons/fa6";
+import { useNavigate, useParams } from "react-router-dom";
 
-import { FaP, FaPlus } from "react-icons/fa6";
-
-// stuff in gray box
+// Accept `cid` as a prop for the course ID
 export default function AssignmentControlButtons() {
-    return (
-        <div className="float-end">
-            <span className="badge rounded-pill text-bg-secondary border " >40% of Total</span>
+  const navigate = useNavigate();
+  const { cid } = useParams();
 
+  const handleAddAssignmentClick = () => {
+    navigate(`/Kanbas/Courses/${cid}/Assignments/new`);
+  };
 
-
-
-
-            <FaPlus />
-            <IoEllipsisVertical className="fs-4" />
-
-
-
-        </div>
-
-
-
-    );
+  return (
+    <div className="float-end">
+      <span className="badge rounded-pill text-bg-secondary border">40% of Total</span>
+      
+      <FaPlus onClick={handleAddAssignmentClick} style={{ cursor: "pointer" }} />
+      <IoEllipsisVertical className="fs-4" />
+    </div>
+  );
 }

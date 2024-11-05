@@ -12,6 +12,14 @@ export default function Assignments() {
 
   const assignments = assignmentsData.filter((assignment) => assignment.course === cid);
 
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    }) + " at " + date.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+  };
+
   return (
     <div id="wd-assignments">
       {/* top of the assignment */}
@@ -59,8 +67,8 @@ export default function Assignments() {
                               {/* the words in the white box */}
                               <div className="small">
                                 <span className="text-red">Multiple Modules</span>
-                                <b> | Not Available until</b> {assignment.notAvailableUntil} <br />
-                                <b>Due</b> {assignment.dueDate} | {assignment.points} pts
+                                <b> | Not Available until</b> {formatDate(assignment.notAvailableUntil)} <br />
+                                <b>Due</b> {formatDate(assignment.dueDate)} | {assignment.points} pts
                               </div>
                             </div>
                             <div className="col-auto">

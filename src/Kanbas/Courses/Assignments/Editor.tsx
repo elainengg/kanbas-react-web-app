@@ -8,11 +8,21 @@ export default function AssignmentEditor() {
 
   const { cid, aid } = useParams();
 
-  const assignment = assignmentsData.find(assign => assign._id === aid);
+  const currentassignment = assignmentsData.find(assign => assign._id === aid);
 
-  if (!assignment) {
-    return <div>Assignment not found.</div>; // if assignment nf
-  }
+  const newAssignment = {
+    title: "",
+    description: "",
+    points: 0,
+    dueDate: "",
+    notAvailableUntil: "",
+    group: "ASSIGNMENTS",
+    displayGradeAs: "PERCENTAGE",
+    submissionType: "ONLINE",
+    assignTo: "EVERYONE"
+  };
+  const assignment = currentassignment || newAssignment; 
+
 
   return (
     <div id="wd-assignments-editor" className="container">
@@ -36,25 +46,25 @@ export default function AssignmentEditor() {
       <br /><br />
 
       <table className="table">
-        <tr>
-          <td align="right" valign="top">
+        <div className="row">
+          <div className="text-end align-top col">
             <label htmlFor="wd-points">Points</label>
-          </td>
-          <td>
+          </div>
+          <div className="col">
             <input
               id="wd-points"
               value={assignment.points} // the points 
-              className="form-control"
+              className="form-control p-2"
             />
-          </td>
-        </tr>
+          </div>
+        </div>
         <br />
 
-        <tr>
-          <td align="right" valign="top">
+        <div className="row">
+          <div className="text-end align-top col">
             <label htmlFor="wd-group"> Assignment Group </label>
-          </td>
-          <td>
+          </div>
+          <div className="col">
             <select id="wd-group" className="form-select mb-4 mt-3">
               <option selected value="ASSIGNMENTS">ASSIGNMENTS</option>
               <option value="LABS">LABS</option>
@@ -70,37 +80,39 @@ export default function AssignmentEditor() {
                 pointerEvents: 'none'
               }}
             />
-          </td>
-        </tr>
+          </div>
+        </div>
         <br />
 
-        <tr>
-          <td align="right" valign="top">
+        <div className="row">
+        <div className="text-end align-top col">
             <label htmlFor="wd-display-grade-as"> Display Grade as </label>
-          </td>
-          <td>
+          </div>
+          <div className="col">
             <select id="wd-display-grade-as" className="form-select mb-4 mt-3">
               <option selected value="PERCENTAGE">Percentage</option>
               <option value="LETTER">Letter</option>
               <option value="Binary">Binary</option>
             </select>
-          </td>
-        </tr>
+          </div>
+        </div>
 
-        <td align="right" valign="top">
+        <div className="row">
+        <div className="text-end align-top col">
+
           <label htmlFor="wd-submission-type"> Submission Type </label>
-        </td>
-
+        </div>
+        <div className="col">
         {/* online entry for assignment */}
-        <div className="col-15 border border-secondary-subtle">
+        <div className="col-13 border border-secondary-subtle">
           <div className="col-auto text-end">
-            <select id="wd-submission-type" className="form-select mb-4 mt-3">
+            <select id="wd-submission-type" className="form-select mb-4 mt-3 p-2">
               <option selected value="ONLINE">Online</option>
               <option value="PDF">PDF</option>
               <option value="WORD">Word</option>
             </select>
+         
           </div>
-
           <div className="mb-3 ">
             <div className="mb-3">
               <label><b>Online Entry Options</b></label><br />
@@ -121,18 +133,23 @@ export default function AssignmentEditor() {
             </div>
           </div>
         </div>
-        <tr> </tr>
+        {/* <div className="row"> </div> */}
+        </div>
+        </div>
+        <div/>
 
 
 
 
         {/* assigning part */}
-        <td align="right" valign="top">
-          <label htmlFor="wd-assign-to"> Assign</label><br />
-        </td>
+        <div className="row">
 
-        <div className="mb-3 ">
-          <div className="col-15 border border-secondary-subtle">
+         <div className="text-end align-top col">
+          <label htmlFor="wd-assign-to"> Assign</label><br />
+        </div>
+
+        <div className="col">
+          <div className="col-13 border border-secondary-subtle">
             <div className="col-auto text-front">
               <label htmlFor="wd-assign-to"><b>Assign to</b></label><br />
               <select className="form-control" id="wd-assign-to">
@@ -171,13 +188,17 @@ export default function AssignmentEditor() {
             </div>
           </div>
         </div>
+        </div>
+
 
         <hr />
 
-        <tr>
+        <div className="row">
+        <div className="col">
+
+          {/* <td></td>
           <td></td>
-          <td></td>
-          <td>
+          <td> */}
             {/* navs back to the assignment page */}
             <Link to={`/Kanbas/Courses/${cid}/Assignments`} className="btn btn-lg btn-danger me-1 float-end" id="wd-cancel-button">
               Cancel
@@ -191,8 +212,10 @@ export default function AssignmentEditor() {
             >
               Save
             </button>
-          </td>
-        </tr>
+          {/* </td> */}
+        </div>
+
+        </div>
       </table>
     </div>
   );

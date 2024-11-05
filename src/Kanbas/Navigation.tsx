@@ -3,13 +3,14 @@ import { IoCalendarOutline } from "react-icons/io5";
 import { LiaBookSolid, LiaCogSolid } from "react-icons/lia";
 import { FaInbox, FaRegCircleUser } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 
 
 export default function KanbasNavigation() {
 
   // extracts current path from url using useLocation 
   const { pathname } = useLocation();
+  
 
   // path w/ labels      path                         icon
   const links = [

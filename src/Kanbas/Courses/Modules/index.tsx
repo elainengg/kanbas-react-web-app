@@ -17,7 +17,7 @@ export default function Modules() {
   return (
     <div>
 
-<ModulesControls moduleName={moduleName} setModuleName={setModuleName}
+      <ModulesControls moduleName={moduleName} setModuleName={setModuleName}
         addModule={() => {
           dispatch(addModule({ name: moduleName, course: cid }));
           setModuleName("");
@@ -30,20 +30,20 @@ export default function Modules() {
           .map((module: any) => (
             <li className="wd-module list-group-item p-0 mb-5 fs-5 border-gray">
               <div className="wd-title p-3 ps-2 bg-secondary">
-                <BsGripVertical className="me-2 fs-3" /> 
+                <BsGripVertical className="me-2 fs-3" />
                 {!module.editing && module.name}
-      { module.editing && (
-        <input className="form-control w-50 d-inline-block"
-               onChange={(e) => updateModule({ ...module, name: e.target.value })}
-               onKeyDown={(e) => {
-                 if (e.key === "Enter") {
-                   updateModule({ ...module, editing: false });
-                 }
-               }}
-               defaultValue={module.name}/>
-      )}
+                {module.editing && (
+                  <input className="form-control w-50 d-inline-block"
+                    onChange={(e) => updateModule({ ...module, name: e.target.value })}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        updateModule({ ...module, editing: false });
+                      }
+                    }}
+                    defaultValue={module.name} />
+                )}
                 <ModuleControlButtons moduleId={module._id}
-        deleteModule={deleteModule}   editModule={editModule}/>
+                  deleteModule={deleteModule} editModule={editModule} />
 
               </div>
               {module.lessons && (

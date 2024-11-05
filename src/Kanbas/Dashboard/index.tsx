@@ -26,10 +26,6 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
       </h5> <hr />
 
 
-
-      
-
-
       <br />
       <input    value={course.name} className="form-control mb-2" 
                    onChange={(e) => setCourse({ ...course, name: e.target.value }) } />
@@ -47,14 +43,15 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
 
           {/* card for each course in a column */}
           {courses
-  .filter((course) =>
-    !currentUser || !enrollments
-      ? true // Show all courses if currentUser or enrollments is missing
-      : enrollments.some(
-          (enrollment) =>
-            enrollment.user === currentUser._id &&
-            enrollment.course === course._id
-        ))
+
+// .filter((course) =>
+//   enrollments.some(
+//     (enrollment) =>
+//       enrollment.user === currentUser._id &&
+//       enrollment.course === course._id
+//      ))
+
+
     .map((course) => (
       <div className="wd-dashboard-course col" style={{ width: "300px" }} >
               <div className="card rounded-3 overflow-hidden">
