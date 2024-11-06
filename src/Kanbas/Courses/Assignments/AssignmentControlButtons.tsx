@@ -1,6 +1,7 @@
 import { IoEllipsisVertical } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import { useNavigate, useParams } from "react-router-dom";
+import { FaTrash } from "react-icons/fa";
 
 export default function AssignmentControlButtons() {
   const navigate = useNavigate();

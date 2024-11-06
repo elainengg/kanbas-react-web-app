@@ -6,11 +6,17 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import LessonControlButtons from "../Modules/LessonControlButtons";
 import { MdOutlineAssignment } from "react-icons/md";
 import assignmentsData from "../../Database/assignments.json";
+import { useSelector, useDispatch } from "react-redux";
+import { FaTrash } from "react-icons/fa6";
+import { deleteAssignment } from "./reducer";
 
 export default function Assignments() {
   const { cid } = useParams();
+  const { assignments } = useSelector((state: any) => state.assignmentReducer);
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
 
-  const assignments = assignmentsData.filter((assignment) => assignment.course === cid);
+  // const assignments = assignmentsData.filter((assignment) => assignment.course === cid);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -34,6 +40,7 @@ export default function Assignments() {
                 <BsGripVertical className="me-2 fs-3" />
                 <IoMdArrowDropdown className="me-2 fs-3" />
                 ASSIGNMENTS
+
                 <AssignmentControlButtons />
               </div>
 
@@ -45,7 +52,9 @@ export default function Assignments() {
                   </div>
                 ) : (
                   //  else map 
-                  assignments.map((assignment) => (
+                  assignments .filter((a: any) => a.course === cid) 
+                  .map((assignment: any) => (
+
                     <div key={assignment._id} className="wd-lessons list-group rounded-0">
                       <div className="wd-lesson list-group-item p-3 ps-1">
                         <div className="container text-left">

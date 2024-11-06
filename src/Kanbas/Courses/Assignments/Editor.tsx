@@ -1,28 +1,55 @@
 import { FaPlus } from "react-icons/fa6";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/io";
 import assignmentsData from "../../Database/assignments.json";
 import * as db from "../../Database";
+import { useState } from "react";
+import { addAssignment, updateAssignment } from "./reducer";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function AssignmentEditor() {
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   // save function that calls reducer pass new assignment manipulate new assignment
   const { cid, aid } = useParams();
+  const { assignments } = useSelector((state: any) => state.assignmentReducer);
+  const newOne = aid === "new";
 
-  const currentassignment = assignmentsData.find(assign => assign._id === aid);
+  // const assignment = assignmentsData.find(assign => assign._id === aid);
+  
+  // find an existing assgingment if no existing one for this id
+  const anotherassignment = !newOne
+    ? assignments.find((assignment: any) => assignment._id === aid)
+    : null;
 
-  const newAssignment = {
+  
+  const [assignment, setAssignment] = useState({
     title: "",
     description: "",
     points: 0,
     dueDate: "",
     notAvailableUntil: "",
-    group: "ASSIGNMENTS",
+    group: "assignmentS",
     displayGradeAs: "PERCENTAGE",
     submissionType: "ONLINE",
-    assignTo: "EVERYONE"
+    assignTo: "EVERYONE",
+    course: cid,
+    ...anotherassignment,
+  });
+
+
+  const handleSave = () => {
+    const assignmentData = {
+      _id: new Date().getTime().toString(),
+      ...assignment,
+      course: cid,
+    };
+    if (newOne) {
+      dispatch(addAssignment(assignmentData));
+    } else {
+      dispatch(updateAssignment(assignmentData));
+    }
   };
-  const assignment = currentassignment || newAssignment; 
 
   return (
     <div id="wd-assignments-editor" className="container">
@@ -32,6 +59,10 @@ export default function AssignmentEditor() {
         id="wd-name"
         value={assignment.title} // get the title out
         className="form-control"
+        onChange={(e) =>
+          setAssignment({ ...assignment, title: e.target.value })
+        }
+        placeholder="Some assignment title"
       />
       <br /><br />
 
@@ -40,6 +71,9 @@ export default function AssignmentEditor() {
         rows={10}
         id="wd-description"
         className="form-control"
+        onChange={(e) =>
+          setAssignment({ ...assignment, description: e.target.value })
+        }
       >
         {assignment.description}
       </textarea>
@@ -55,6 +89,10 @@ export default function AssignmentEditor() {
               id="wd-points"
               value={assignment.points} // the points 
               className="form-control p-2"
+              onChange={(e) =>
+                setAssignment({ ...assignment, points: Number(e.target.value) })
+              }
+              
             />
           </div>
         </div>
@@ -66,7 +104,7 @@ export default function AssignmentEditor() {
           </div>
           <div className="col">
             <select id="wd-group" className="form-select mb-4 mt-3">
-              <option selected value="ASSIGNMENTS">ASSIGNMENTS</option>
+              <option selected value="assignmentS">assignmentS</option>
               <option value="LABS">LABS</option>
               <option value="QUIZ">QUIZ</option>
               <option value="EXAM">EXAM</option>
@@ -200,18 +238,20 @@ export default function AssignmentEditor() {
           <td></td>
           <td> */}
             {/* navs back to the assignment page */}
-            <Link to={`/Kanbas/Courses/${cid}/Assignments`} className="btn btn-lg btn-danger me-1 float-end" id="wd-cancel-button">
+            <Link to={`/Kanbas/Courses/${cid}/assignments`} 
+            className="btn btn-lg btn-danger me-1 float-end" id="wd-cancel-button">
               Cancel
             </Link>
 
-            <button
-              className="btn btn-lg btn-secondary me-1 float-end"
-              id="wd-save-button"
-              onClick={() => alert("Saving Assignment Edits!")}
-              type="button"
-            >
-              Save
+            <button className="btn btn-lg btn-secondary me-1 float-end" 
+            id="wd-save-button"  
+            onClick={() => {
+                dispatch(addAssignment(assignment));
+                navigate(`/Kanbas/Courses/${cid}/Assignments/`);
+            }}>Save
+              
             </button>
+
           {/* </td> */}
         </div>
 
