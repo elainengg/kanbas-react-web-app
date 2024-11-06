@@ -7,7 +7,7 @@ import LessonControlButtons from "../Modules/LessonControlButtons";
 import { MdOutlineAssignment } from "react-icons/md";
 import assignmentsData from "../../Database/assignments.json";
 import { useSelector, useDispatch } from "react-redux";
-import { FaTrash } from "react-icons/fa6";
+import { FaPencil, FaTrash } from "react-icons/fa6";
 import { deleteAssignment } from "./reducer";
 
 export default function Assignments() {
@@ -70,7 +70,8 @@ export default function Assignments() {
                               <div className="col">
                                 <a
                                   className="wd-assignment-link"
-                                  href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
+                                  
+                                  // href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
                                   style={{ color: 'black', textDecoration: 'none' }}
                                 >
                                   <b>{assignment.title}</b>
@@ -84,7 +85,12 @@ export default function Assignments() {
                                 </div>
                               </div>
                               <div className="col-auto">
+                              {(currentUser.role === "FACULTY") && (
+                              <FaPencil onClick={() => 
+                                    navigate(`/Kanbas/Courses/${cid}/Assignments/${assignment._id}`)} 
+                                  className="text-primary me-3" />)}
                                 {(currentUser.role === "FACULTY") && (
+
                                   <FaTrash className="text-danger me-2 fs-4"
                                     onClick={() => dispatch(deleteAssignment(assignment._id))} />)}
                                 {(currentUser.role === "FACULTY") && (<LessonControlButtons />)}

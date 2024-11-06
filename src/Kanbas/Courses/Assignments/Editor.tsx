@@ -38,19 +38,6 @@ export default function AssignmentEditor() {
   });
 
 
-  const handleSave = () => {
-    const assignmentData = {
-      _id: new Date().getTime().toString(),
-      ...assignment,
-      course: cid,
-    };
-    if (newOne) {
-      dispatch(addAssignment(assignmentData));
-    } else {
-      dispatch(updateAssignment(assignmentData));
-    }
-  };
-
   return (
     <div id="wd-assignments-editor" className="container">
       <h3><label htmlFor="wd-name">Assignment Name</label></h3>
@@ -246,7 +233,14 @@ export default function AssignmentEditor() {
             <button className="btn btn-lg btn-secondary me-1 float-end"
               id="wd-save-button"
               onClick={() => {
-                dispatch(addAssignment(assignment));
+                // dispatch(addAssignment(assignment));
+
+                if (anotherassignment) {
+                  dispatch(updateAssignment({ ...assignment, _id: aid }));
+              } else {
+
+                  dispatch(addAssignment(assignment));
+              }
                 navigate(`/Kanbas/Courses/${cid}/Assignments/`);
               }}>Save
 
