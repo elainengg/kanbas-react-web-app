@@ -7,11 +7,10 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function AssignmentControls() {
     const { cid } = useParams();
 
-    const navigate = useNavigate(); // Hook to programmatically navigate
+    const navigate = useNavigate(); 
 
     const handleAddAssignment = () => {
-        // Navigate to the assignment editor with a new assignment (no aid)
-        navigate(`/Kanbas/Courses/${cid}/Assignments/New`); // Adjust the path as necessary
+        navigate(`/Kanbas/Courses/${cid}/Assignments/New`); 
     };
     return (
 
@@ -19,7 +18,7 @@ export default function AssignmentControls() {
             <button
                 id="wd-add-assignment-btn"
                 className="btn btn-lg btn-danger me-1 float-end"
-                onClick={handleAddAssignment} // Add click handler
+                onClick={handleAddAssignment}// handler
             >
                 <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
                 Assignment

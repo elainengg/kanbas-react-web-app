@@ -6,6 +6,7 @@ import * as db from "../../Database";
 
 export default function AssignmentEditor() {
 
+  // save function that calls reducer pass new assignment manipulate new assignment
   const { cid, aid } = useParams();
 
   const currentassignment = assignmentsData.find(assign => assign._id === aid);
@@ -22,7 +23,6 @@ export default function AssignmentEditor() {
     assignTo: "EVERYONE"
   };
   const assignment = currentassignment || newAssignment; 
-
 
   return (
     <div id="wd-assignments-editor" className="container">

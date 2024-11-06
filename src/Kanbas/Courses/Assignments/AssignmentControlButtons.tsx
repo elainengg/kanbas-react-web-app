@@ -2,7 +2,6 @@ import { IoEllipsisVertical } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import { useNavigate, useParams } from "react-router-dom";
 
-// Accept `cid` as a prop for the course ID
 export default function AssignmentControlButtons() {
   const navigate = useNavigate();
   const { cid } = useParams();
