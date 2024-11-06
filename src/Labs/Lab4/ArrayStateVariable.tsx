@@ -14,15 +14,15 @@ export default function ArrayStateVariable() {
       <ul className="list-group w-25 p-2">
         {array.map((item, index) => (
           <li className="list-group-item h4 font-weight-bold" key={index}>
-            {item} 
+            {item}
             <button onClick={() => deleteElement(index)}
-                    id="wd-delete-element-click"
-                    className="btn btn-danger float-end ">
+              id="wd-delete-element-click"
+              className="btn btn-danger float-end ">
               Delete</button>
           </li>
         ))}
       </ul>
-      <hr/>
+      <hr />
     </div>
   );
 }

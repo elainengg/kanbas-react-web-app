@@ -7,10 +7,10 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function AssignmentControls() {
     const { cid } = useParams();
 
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     const handleAddAssignment = () => {
-        navigate(`/Kanbas/Courses/${cid}/Assignments/New`); 
+        navigate(`/Kanbas/Courses/${cid}/Assignments/New`);
     };
     return (
 

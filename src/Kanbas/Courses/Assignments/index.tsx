@@ -14,7 +14,6 @@ export default function Assignments() {
   const { cid } = useParams();
   const { assignments } = useSelector((state: any) => state.assignmentReducer);
   const dispatch = useDispatch();
-  const { currentUser } = useSelector((state: any) => state.accountReducer);
   const navigate = useNavigate();
   // const assignments = assignmentsData.filter((assignment) => assignment.course === cid);
 
@@ -26,10 +25,12 @@ export default function Assignments() {
     }) + " at " + date.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
   };
 
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+
   return (
     <div id="wd-assignments">
-      {/* top of the assignment */}
-      <AssignmentsControls /><br /><br />
+      {(currentUser.role === "FACULTY") && (
+        <AssignmentsControls />)}<br /><br />
 
       <div className="container">
         <div className="row">
@@ -40,9 +41,11 @@ export default function Assignments() {
                 <BsGripVertical className="me-2 fs-3" />
                 <IoMdArrowDropdown className="me-2 fs-3" />
                 ASSIGNMENTS
+                {(currentUser.role === "FACULTY") && (
 
-                <AssignmentControlButtons />
+                  <AssignmentControlButtons />)}
               </div>
+
 
               {/* the actual assignments themselves */}
               <div className="table wd-lessons list-group rounded-0">
@@ -52,44 +55,45 @@ export default function Assignments() {
                   </div>
                 ) : (
                   //  else map 
-                  assignments .filter((a: any) => a.course === cid) 
-                  .map((assignment: any) => (
+                  assignments.filter((a: any) => a.course === cid)
+                    .map((assignment: any) => (
 
-                    <div key={assignment._id} className="wd-lessons list-group rounded-0">
-                      <div className="wd-lesson list-group-item p-3 ps-1">
-                        <div className="container text-left">
-                          {/* aligning the buttons so it looks pretty */}
-                          <div className="row align-items-center">
-                            <div className="col-auto">
-                              <BsGripVertical className="me-2 fs-3" />
-                              <MdOutlineAssignment className="me-2 fs-3" color="green" />
-                            </div>
-                            <div className="col">
-                              <a
-                                className="wd-assignment-link"
-                                href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
-                                style={{ color: 'black', textDecoration: 'none' }}
-                              >
-                                <b>{assignment.title}</b>
-                              </a>
-                              <br />
-                              {/* the words in the white box */}
-                              <div className="small">
-                                <span className="text-red">Multiple Modules</span>
-                                <b> | Not Available until</b> {formatDate(assignment.notAvailableUntil)} <br />
-                                <b>Due</b> {formatDate(assignment.dueDate)} | {assignment.points} pts
+                      <div key={assignment._id} className="wd-lessons list-group rounded-0">
+                        <div className="wd-lesson list-group-item p-3 ps-1">
+                          <div className="container text-left">
+                            {/* aligning the buttons so it looks pretty */}
+                            <div className="row align-items-center">
+                              <div className="col-auto">
+                                <BsGripVertical className="me-2 fs-3" />
+                                <MdOutlineAssignment className="me-2 fs-3" color="green" />
                               </div>
-                            </div>
-                            <div className="col-auto">
-                            <FaTrash className="text-danger me-2 fs-4"
-                                            onClick={() => dispatch(deleteAssignment(assignment._id))} />
-                              <LessonControlButtons />
+                              <div className="col">
+                                <a
+                                  className="wd-assignment-link"
+                                  href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
+                                  style={{ color: 'black', textDecoration: 'none' }}
+                                >
+                                  <b>{assignment.title}</b>
+                                </a>
+                                <br />
+                                {/* the words in the white box */}
+                                <div className="small">
+                                  <span className="text-red">Multiple Modules</span>
+                                  <b> | Not Available until</b> {formatDate(assignment.notAvailableUntil)} <br />
+                                  <b>Due</b> {formatDate(assignment.dueDate)} | {assignment.points} pts
+                                </div>
+                              </div>
+                              <div className="col-auto">
+                                {(currentUser.role === "FACULTY") && (
+                                  <FaTrash className="text-danger me-2 fs-4"
+                                    onClick={() => dispatch(deleteAssignment(assignment._id))} />)}
+                                {(currentUser.role === "FACULTY") && (<LessonControlButtons />)}
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))
+                    ))
                 )}
               </div>
             </li>

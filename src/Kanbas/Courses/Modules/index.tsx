@@ -13,15 +13,16 @@ export default function Modules() {
   const [moduleName, setModuleName] = useState("");
   const { modules } = useSelector((state: any) => state.modulesReducer);
   const dispatch = useDispatch();
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
 
   return (
     <div>
-
-      <ModulesControls moduleName={moduleName} setModuleName={setModuleName}
-        addModule={() => {
-          dispatch(addModule({ name: moduleName, course: cid }));
-          setModuleName("");
-        }} /><br /><br /><br /><br />
+      {(currentUser.role === "FACULTY") && (
+        <ModulesControls moduleName={moduleName} setModuleName={setModuleName}
+          addModule={() => {
+            dispatch(addModule({ name: moduleName, course: cid }));
+            setModuleName("");
+          }} />)} <br /><br /><br /><br />
 
 
       <ul id="wd-modules" className="list-group rounded-0">
@@ -42,15 +43,19 @@ export default function Modules() {
                     }}
                     defaultValue={module.name} />
                 )}
-                <ModuleControlButtons moduleId={module._id}
-                  deleteModule={deleteModule} editModule={editModule} />
+                {(currentUser.role === "FACULTY") && (
+                  <ModuleControlButtons moduleId={module._id}
+                    deleteModule={deleteModule} editModule={editModule} />)}
 
               </div>
+
               {module.lessons && (
                 <ul className="wd-lessons list-group rounded-0">
                   {module.lessons.map((lesson: any) => (
                     <li className="wd-lesson list-group-item p-3 ps-1">
-                      <BsGripVertical className="me-2 fs-3" /> {lesson.name} <LessonControlButtons />
+                      <BsGripVertical className="me-2 fs-3" /> {lesson.name}
+                      {(currentUser.role === "FACULTY") && (
+                        <LessonControlButtons />)}
                     </li>
                   ))}</ul>)}</li>))}</ul>
 

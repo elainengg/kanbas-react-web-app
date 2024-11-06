@@ -57,49 +57,49 @@ export default function Lab3() {
           </li>
         ))}
       </ul>
-    <div id="wd-lab3">
-      <h3>Lab 3</h3>
-      <VariablesAndConstants />
-      <VariableTypes />
-      <BooleanVariables />
-      <IfElse />
-      <TernaryOperator />
-      <ConditionalOutputIfElse />
-      <ConditionalOutputInline />
-      <LegacyFunctions />
-      <ArrowFunctions />
-      <ImpliedReturn />
-      <TemplateLiterals />
-      <SimpleArrays />
-      <ArrayIndexAndLength />
-      <AddingAndRemovingToFromArrays />
-      <ForLoops />
-      <MapFunction />
-      <FindFunction />
-      <FindIndex />
-      <FilterFunction />
-      <JsonStringify />
-      <House />
-      <TodoItem />
-      <TodoList />
-      <Spreading />
-      <Destructing />
-      <FunctionDestructing />
-      <DestructingImports />
-      <Classes />
-      <Styles />
+      <div id="wd-lab3">
+        <h3>Lab 3</h3>
+        <VariablesAndConstants />
+        <VariableTypes />
+        <BooleanVariables />
+        <IfElse />
+        <TernaryOperator />
+        <ConditionalOutputIfElse />
+        <ConditionalOutputInline />
+        <LegacyFunctions />
+        <ArrowFunctions />
+        <ImpliedReturn />
+        <TemplateLiterals />
+        <SimpleArrays />
+        <ArrayIndexAndLength />
+        <AddingAndRemovingToFromArrays />
+        <ForLoops />
+        <MapFunction />
+        <FindFunction />
+        <FindIndex />
+        <FilterFunction />
+        <JsonStringify />
+        <House />
+        <TodoItem />
+        <TodoList />
+        <Spreading />
+        <Destructing />
+        <FunctionDestructing />
+        <DestructingImports />
+        <Classes />
+        <Styles />
 
 
-      <Add a={3} b={4} />
-      <h4>Square of 4</h4>
-      {/* Children  is 4*/}
-      <Square>4</Square>
-      <hr />
-      <Highlight>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipitratione eaque illo minus cum, saepe totam
-        vel nihil repellat nemo explicabo excepturi consectetur. Modi omnis minus sequi maiores, provident voluptates.
-      </Highlight>
-      <PathParameters />
+        <Add a={3} b={4} />
+        <h4>Square of 4</h4>
+        {/* Children  is 4*/}
+        <Square>4</Square>
+        <hr />
+        <Highlight>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipitratione eaque illo minus cum, saepe totam
+          vel nihil repellat nemo explicabo excepturi consectetur. Modi omnis minus sequi maiores, provident voluptates.
+        </Highlight>
+        <PathParameters />
 
 
 

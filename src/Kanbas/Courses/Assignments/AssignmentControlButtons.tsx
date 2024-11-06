@@ -14,7 +14,7 @@ export default function AssignmentControlButtons() {
   return (
     <div className="float-end">
       <span className="badge rounded-pill text-bg-secondary border">40% of Total</span>
-      
+
       <FaPlus onClick={handleAddAssignmentClick} style={{ cursor: "pointer" }} />
       <IoEllipsisVertical className="fs-4" />
     </div>

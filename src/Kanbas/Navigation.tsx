@@ -10,7 +10,7 @@ export default function KanbasNavigation() {
 
   // extracts current path from url using useLocation 
   const { pathname } = useLocation();
-  
+
 
   // path w/ labels      path                         icon
   const links = [

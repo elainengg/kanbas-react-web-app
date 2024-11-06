@@ -15,4 +15,5 @@ export default function Counter() {
         id="wd-counter-down-click">
         Down
       </button>
-<hr/></div>);}
+      <hr /></div>);
+}

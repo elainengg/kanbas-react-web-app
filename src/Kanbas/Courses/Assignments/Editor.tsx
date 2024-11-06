@@ -16,13 +16,13 @@ export default function AssignmentEditor() {
   const newOne = aid === "new";
 
   // const assignment = assignmentsData.find(assign => assign._id === aid);
-  
+
   // find an existing assgingment if no existing one for this id
   const anotherassignment = !newOne
     ? assignments.find((assignment: any) => assignment._id === aid)
     : null;
 
-  
+
   const [assignment, setAssignment] = useState({
     title: "",
     description: "",
@@ -92,7 +92,7 @@ export default function AssignmentEditor() {
               onChange={(e) =>
                 setAssignment({ ...assignment, points: Number(e.target.value) })
               }
-              
+
             />
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function AssignmentEditor() {
         <br />
 
         <div className="row">
-        <div className="text-end align-top col">
+          <div className="text-end align-top col">
             <label htmlFor="wd-display-grade-as"> Display Grade as </label>
           </div>
           <div className="col">
@@ -136,45 +136,45 @@ export default function AssignmentEditor() {
         </div>
 
         <div className="row">
-        <div className="text-end align-top col">
+          <div className="text-end align-top col">
 
-          <label htmlFor="wd-submission-type"> Submission Type </label>
-        </div>
-        <div className="col">
-        {/* online entry for assignment */}
-        <div className="col-13 border border-secondary-subtle">
-          <div className="col-auto text-end">
-            <select id="wd-submission-type" className="form-select mb-4 mt-3 p-2">
-              <option selected value="ONLINE">Online</option>
-              <option value="PDF">PDF</option>
-              <option value="WORD">Word</option>
-            </select>
-         
+            <label htmlFor="wd-submission-type"> Submission Type </label>
           </div>
-          <div className="mb-3 ">
-            <div className="mb-3">
-              <label><b>Online Entry Options</b></label><br />
-            </div>
-            <div className="mb-1">
-              <div className="col-sm-10">
-                <input type="checkbox" name="check-entry" className="form-check-input" id="wd-text-entry" />
-                <label htmlFor="wd-text-entry">Text Entry</label><br />
-                <input type="checkbox" name="check-entry" className="form-check-input" id="wd-website-url" />
-                <label htmlFor="wd-website-url">Website URL</label><br />
-                <input type="checkbox" name="check-entry" className="form-check-input" id="wd-media-recordings" />
-                <label htmlFor="wd-media-recordings">Media Recordings</label><br />
-                <input type="checkbox" name="check-entry" className="form-check-input" id="wd-student-annotation" />
-                <label htmlFor="wd-student-annotation">Student Annotation</label><br />
-                <input type="checkbox" name="check-entry" className="form-check-input" id="wd-file-upload" />
-                <label htmlFor="wd-file-upload">File Uploads</label><br />
+          <div className="col">
+            {/* online entry for assignment */}
+            <div className="col-13 border border-secondary-subtle">
+              <div className="col-auto text-end">
+                <select id="wd-submission-type" className="form-select mb-4 mt-3 p-2">
+                  <option selected value="ONLINE">Online</option>
+                  <option value="PDF">PDF</option>
+                  <option value="WORD">Word</option>
+                </select>
+
+              </div>
+              <div className="mb-3 ">
+                <div className="mb-3">
+                  <label><b>Online Entry Options</b></label><br />
+                </div>
+                <div className="mb-1">
+                  <div className="col-sm-10">
+                    <input type="checkbox" name="check-entry" className="form-check-input" id="wd-text-entry" />
+                    <label htmlFor="wd-text-entry">Text Entry</label><br />
+                    <input type="checkbox" name="check-entry" className="form-check-input" id="wd-website-url" />
+                    <label htmlFor="wd-website-url">Website URL</label><br />
+                    <input type="checkbox" name="check-entry" className="form-check-input" id="wd-media-recordings" />
+                    <label htmlFor="wd-media-recordings">Media Recordings</label><br />
+                    <input type="checkbox" name="check-entry" className="form-check-input" id="wd-student-annotation" />
+                    <label htmlFor="wd-student-annotation">Student Annotation</label><br />
+                    <input type="checkbox" name="check-entry" className="form-check-input" id="wd-file-upload" />
+                    <label htmlFor="wd-file-upload">File Uploads</label><br />
+                  </div>
+                </div>
               </div>
             </div>
+            {/* <div className="row"> </div> */}
           </div>
         </div>
-        {/* <div className="row"> </div> */}
-        </div>
-        </div>
-        <div/>
+        <div />
 
 
 
@@ -182,78 +182,78 @@ export default function AssignmentEditor() {
         {/* assigning part */}
         <div className="row">
 
-         <div className="text-end align-top col">
-          <label htmlFor="wd-assign-to"> Assign</label><br />
-        </div>
+          <div className="text-end align-top col">
+            <label htmlFor="wd-assign-to"> Assign</label><br />
+          </div>
 
-        <div className="col">
-          <div className="col-13 border border-secondary-subtle">
-            <div className="col-auto text-front">
-              <label htmlFor="wd-assign-to"><b>Assign to</b></label><br />
-              <select className="form-control" id="wd-assign-to">
-                <option selected value="EVERYONE">Everyone</option>
-              </select>
-              {/* all of the dates in the json file is yy-mm-dd */}
-              <label htmlFor="wd-due-date"><b>Due</b></label><br />
-              <input
-                type="date"
-                className="form-control"
-                id="wd-due-date"
-                value={assignment.dueDate}
-              /><br />
+          <div className="col">
+            <div className="col-13 border border-secondary-subtle">
+              <div className="col-auto text-front">
+                <label htmlFor="wd-assign-to"><b>Assign to</b></label><br />
+                <select className="form-control" id="wd-assign-to">
+                  <option selected value="EVERYONE">Everyone</option>
+                </select>
+                {/* all of the dates in the json file is yy-mm-dd */}
+                <label htmlFor="wd-due-date"><b>Due</b></label><br />
+                <input
+                  type="date"
+                  className="form-control"
+                  id="wd-due-date"
+                  value={assignment.dueDate}
+                /><br />
 
-              <div className="row mb-5 ">
-                <div className="col">
-                  <label htmlFor="wd-available-from"><b>Available from</b></label><br />
-                  <input
-                    type="date"
-                    className="form-control"
-                    id="wd-available-from"
-                    value={assignment.notAvailableUntil}
-                  />
-                </div>
+                <div className="row mb-5 ">
+                  <div className="col">
+                    <label htmlFor="wd-available-from"><b>Available from</b></label><br />
+                    <input
+                      type="date"
+                      className="form-control"
+                      id="wd-available-from"
+                      value={assignment.notAvailableUntil}
+                    />
+                  </div>
 
-                <div className="col">
-                  <label htmlFor="wd-available-until"><b>Until</b></label><br />
-                  <input
-                    type="date"
-                    className="form-control"
-                    id="wd-available-until"
-                    value={assignment.dueDate}
-                  />
+                  <div className="col">
+                    <label htmlFor="wd-available-until"><b>Until</b></label><br />
+                    <input
+                      type="date"
+                      className="form-control"
+                      id="wd-available-until"
+                      value={assignment.dueDate}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
 
 
         <hr />
 
         <div className="row">
-        <div className="col">
+          <div className="col">
 
-          {/* <td></td>
+            {/* <td></td>
           <td></td>
           <td> */}
             {/* navs back to the assignment page */}
-            <Link to={`/Kanbas/Courses/${cid}/assignments`} 
-            className="btn btn-lg btn-danger me-1 float-end" id="wd-cancel-button">
+            <Link to={`/Kanbas/Courses/${cid}/assignments`}
+              className="btn btn-lg btn-danger me-1 float-end" id="wd-cancel-button">
               Cancel
             </Link>
 
-            <button className="btn btn-lg btn-secondary me-1 float-end" 
-            id="wd-save-button"  
-            onClick={() => {
+            <button className="btn btn-lg btn-secondary me-1 float-end"
+              id="wd-save-button"
+              onClick={() => {
                 dispatch(addAssignment(assignment));
                 navigate(`/Kanbas/Courses/${cid}/Assignments/`);
-            }}>Save
-              
+              }}>Save
+
             </button>
 
-          {/* </td> */}
-        </div>
+            {/* </td> */}
+          </div>
 
         </div>
       </table>

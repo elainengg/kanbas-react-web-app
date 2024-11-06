@@ -57,8 +57,8 @@ export default function ModulesControls({ moduleName, setModuleName, addModule }
             <button id="wd-collapse-all" className="btn btn-lg btn-secondary me-1 float-end">
 
                 Collapse All</button>
-                <ModuleEditor dialogTitle="Add Module" moduleName={moduleName}
-                    setModuleName={setModuleName} addModule={addModule} />
+            <ModuleEditor dialogTitle="Add Module" moduleName={moduleName}
+                setModuleName={setModuleName} addModule={addModule} />
         </div>
     );
 }

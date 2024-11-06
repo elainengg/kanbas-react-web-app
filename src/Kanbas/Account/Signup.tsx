@@ -9,17 +9,17 @@ export default function Signup() {
 
   const handleSignup = () => {
     const { username, password, verifyPassword } = credentials;
-  
+
     // pass matches
     if (password !== verifyPassword) {
       return;
     }
-  
+
     // username already exists
     if (db.users.some((u: any) => u.username === username)) {
       return;
     }
-  
+
     // create new user with default or placeholder values for required fields
     const newUser = {
       _id: Date.now().toString(),  // or use a unique ID generator
@@ -35,14 +35,14 @@ export default function Signup() {
       lastActivity: new Date().toISOString(),
       totalActivity: "0",
     };
-  
+
     // Add new user to the database (mock implementation)
     db.users.push(newUser);
-  
+
     // Navigate to Profile after successful signup
     navigate("/Kanbas/Account/Profile");
   };
-  
+
 
   return (
     <div id="wd-signup-screen">
