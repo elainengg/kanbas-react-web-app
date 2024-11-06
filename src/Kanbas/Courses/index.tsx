@@ -9,7 +9,7 @@ import PeopleTable from "./People/Table";
 import { courses } from "../Database";
 
 
-export default function Courses() {
+export default function Courses({ courses }: { courses: any[]; }) {
   const { cid } = useParams();
   const course = courses.find((course) => course._id === cid);
   const { pathname } = useLocation();
@@ -35,6 +35,7 @@ export default function Courses() {
 
             <Route path="Assignments" element={<h2>Assignments</h2>} />
             <Route path="Assignments/:aid" element={<AssignmentEditor />} />
+
 
             <Route path="Assignments/:aid" element={<h2>Assignment Editor</h2>} />
             <Route path="People" element={<PeopleTable />} />
