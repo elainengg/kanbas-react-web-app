@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BsGripVertical } from "react-icons/bs";
 import AssignmentsControls from "./AssignmentsControls";
 import AssignmentControlButtons from "./AssignmentControlButtons";
@@ -15,7 +15,7 @@ export default function Assignments() {
   const { assignments } = useSelector((state: any) => state.assignmentReducer);
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state: any) => state.accountReducer);
-
+  const navigate = useNavigate();
   // const assignments = assignmentsData.filter((assignment) => assignment.course === cid);
 
   const formatDate = (dateString: string) => {
@@ -81,6 +81,8 @@ export default function Assignments() {
                               </div>
                             </div>
                             <div className="col-auto">
+                            <FaTrash className="text-danger me-2 fs-4"
+                                            onClick={() => dispatch(deleteAssignment(assignment._id))} />
                               <LessonControlButtons />
                             </div>
                           </div>
