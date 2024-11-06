@@ -3,17 +3,23 @@ import { assignments } from "../../Database";
 const initialState = {
   assignments: assignments,
 };
+
 const assignmentsSlice = createSlice({
   name: "assignments",
   initialState,
   reducers: {
     addassignment: (state, { payload: assignment }) => {
       const newassignment: any = {
-        _id: new Date().getTime().toString(),
-        lessons: [],
-        name: assignment.name,
-        course: assignment.course,
+        _id: assignment.id,
+       title: assignment.title,
+       course: assignment.course,
+       notAvailableUntil: assignment.notAvailableUntil,
+       dueDate: assignment.dueDate,
+       points: assignment.points,
+       description: assignment.description,
+
       };
+
       state.assignments = [...state.assignments, newassignment] as any;
     },
     deleteassignment: (state, { payload: assignmentId }) => {
