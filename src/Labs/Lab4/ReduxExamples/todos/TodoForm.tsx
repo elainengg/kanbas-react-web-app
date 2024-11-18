@@ -10,10 +10,11 @@ export default function TodoForm(
   return (
     <li className="list-group-item">
       <button onClick={() => dispatch(addTodo(todo))}
-        id="wd-add-todo-click"> Add </button>
+        id="wd-add-todo-click"
+        className="btn btn-success"> Add </button>
       <button onClick={() => dispatch(updateTodo(todo))}
-        id="wd-update-todo-click"> Update </button>
-      <input
+        id="wd-update-todo-click"  className="btn btn-warning"> Update </button>
+      <input className="form-control flex-fill"
         defaultValue={todo.title}
         onChange={(e) => dispatch(setTodo({ ...todo, title: e.target.value }))} />
     </li>
