@@ -1,7 +1,6 @@
 import { FaPlus } from "react-icons/fa6";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/io";
-import assignmentsData from "../../Database/assignments.json";
 import * as db from "../../Database";
 import { useState } from "react";
 import { addAssignment, updateAssignment } from "./reducer";
