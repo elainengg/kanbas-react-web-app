@@ -10,6 +10,7 @@ import * as db from "./Database";
 import { useState } from "react";
 import ProtectedRoute from "./Account/ProtectedRoute";
 
+import Session from "./Account/Session";
 
 
 
@@ -38,6 +39,8 @@ export default function Kanbas() {
   };
 
   return (
+    <Session>
+
     <div id="wd-kanbas">
       {/* <h1>Kanbas</h1> */}
       <KanbasNavigation />
@@ -59,8 +62,12 @@ export default function Kanbas() {
           <Route path="People" element={<PeopleTable />} />
 
         </Routes>
+        
       </div>
+      
     </div>
+    </Session>
+
 
   );
 }

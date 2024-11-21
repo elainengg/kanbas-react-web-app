@@ -17,5 +17,11 @@ export const signup = async (user: any) => {
     const response = await axios.put(`${USERS_API}/${user._id}`, user);
     return response.data;
   };
+
+  export const profile = async () => {
+    const response = await axios.post(`${USERS_API}/profile`);
+    return response.data;
+  };
+  
   
   
