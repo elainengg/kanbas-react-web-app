@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import * as db from "../Database";
+// import * as db from "../Database";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -10,7 +10,7 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
   updateCourse: () => void; }) {
   // get the courses out
   const { currentUser } = useSelector((state: any) => state.accountReducer);
-  const { enrollments } = db;
+  // const { enrollments } = db;
 
   return (
     <div id="wd-dashboard">
