@@ -38,6 +38,12 @@ export default function Modules() {
     dispatch(deleteModule(moduleId));
   };
 
+  const saveModule = async (module: any) => {
+    await modulesClient.updateModule(module);
+    dispatch(updateModule(module));
+  };
+
+
   return (
     <div className="wd-modules">
        {(currentUser.role === "FACULTY") && (
@@ -71,7 +77,7 @@ export default function Modules() {
                     }
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
-                        dispatch(updateModule({ ...module, editing: false }));
+                        saveModule({ ...module, editing: false });
                       }
                     }}
                     defaultValue={module.name}/>
