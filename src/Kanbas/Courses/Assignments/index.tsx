@@ -5,7 +5,6 @@ import AssignmentControlButtons from "./AssignmentControlButtons";
 import { IoMdArrowDropdown } from "react-icons/io";
 import LessonControlButtons from "../Modules/LessonControlButtons";
 import { MdOutlineAssignment } from "react-icons/md";
-import assignmentsData from "../../Database/assignments.json";
 import { useSelector, useDispatch } from "react-redux";
 import { FaPencil, FaTrash } from "react-icons/fa6";
 import { deleteAssignment } from "./reducer";

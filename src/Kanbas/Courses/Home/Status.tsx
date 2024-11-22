@@ -9,7 +9,6 @@ import { BsFileBarGraph } from "react-icons/bs";
 import { IoIosNotifications } from "react-icons/io";
 
 
-{/* Find more icons */ }
 export default function CourseStatus() {
   return (
     <div id="wd-course-status" style={{ width: "300px" }}>
@@ -35,7 +34,6 @@ export default function CourseStatus() {
 
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
         <LiaFileImportSolid className="me-2 fs-5" /> Import from Commons </button>
-      {/* Complete the rest of the buttons */}
 
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
         <FaRegEye className="me-2 fs-5" /> View Course Stream </button>

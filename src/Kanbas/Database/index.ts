@@ -6,4 +6,3 @@ import enrollments from "./enrollments.json"
 
 
 export { courses, modules, assignments, users, enrollments };
-
