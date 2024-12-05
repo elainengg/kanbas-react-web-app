@@ -28,7 +28,7 @@ export default function Assignments() {
 
   return (
     <div id="wd-assignments">
-      {(currentUser.role === "FACULTY") && (
+      {(currentUser.role === "FACULTY" || currentUser.role === "ADMIN" ) && (
         <AssignmentsControls />)}<br /><br />
 
       <div className="container">
@@ -40,7 +40,7 @@ export default function Assignments() {
                 <BsGripVertical className="me-2 fs-3" />
                 <IoMdArrowDropdown className="me-2 fs-3" />
                 ASSIGNMENTS
-                {(currentUser.role === "FACULTY") && (
+                {(currentUser.role === "FACULTY" || currentUser.role === "ADMIN" ) && (
 
                   <AssignmentControlButtons />)}
               </div>
@@ -84,15 +84,15 @@ export default function Assignments() {
                                 </div>
                               </div>
                               <div className="col-auto">
-                              {(currentUser.role === "FACULTY") && (
+                              {(currentUser.role === "FACULTY" || currentUser.role === "ADMIN" ) && (
                               <FaPencil onClick={() => 
                                     navigate(`/Kanbas/Courses/${cid}/Assignments/${assignment._id}`)} 
                                   className="text-primary me-3" />)}
-                                {(currentUser.role === "FACULTY") && (
+                                {(currentUser.role === "FACULTY" || currentUser.role === "ADMIN" ) && (
 
                                   <FaTrash className="text-danger me-2 fs-4"
                                     onClick={() => dispatch(deleteAssignment(assignment._id))} />)}
-                                {(currentUser.role === "FACULTY") && (<LessonControlButtons />)}
+                                {(currentUser.role === "FACULTY" || currentUser.role === "ADMIN" ) && (<LessonControlButtons />)}
                               </div>
                             </div>
                           </div>
