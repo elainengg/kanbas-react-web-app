@@ -7,6 +7,7 @@ import { Navigate, Route, Routes, useParams, useLocation } from "react-router";
 import { FaAlignJustify } from "react-icons/fa";
 import PeopleTable from "./People/Table";
 import { courses } from "../Database";
+import Users from "../Account/Users";
 
 
 export default function Courses({ courses }: { courses: any[]; }) {
@@ -38,7 +39,7 @@ export default function Courses({ courses }: { courses: any[]; }) {
 
 
             <Route path="Assignments/:aid" element={<h2>Assignment Editor</h2>} />
-            <Route path="People" element={<PeopleTable />} />
+            <Route path="People" element={<Users />} />
           </Routes>
         </div></div>
     </div>
