@@ -46,7 +46,7 @@ export default function Modules() {
 
   return (
     <div className="wd-modules">
-       {(currentUser.role === "FACULTY") && (
+       {(currentUser.role === "FACULTY" || currentUser.role === "ADMIN") && (
       <ModulesControls
         moduleName={moduleName}
         setModuleName={setModuleName}
@@ -67,7 +67,7 @@ export default function Modules() {
 
                 {!module.editing && module.name}
 
-                {module.editing && currentUser.role === "FACULTY" && (
+                {module.editing && (currentUser.role === "FACULTY" || currentUser.role === "ADMIN" )&& (
                   <input
                     className="form-control w-50 d-inline-block"
                     onChange={(e) =>
@@ -83,7 +83,7 @@ export default function Modules() {
                     defaultValue={module.name}/>
                 )}
 
-                {currentUser.role === "FACULTY" && (
+                {(currentUser.role === "FACULTY"|| currentUser.role === "ADMIN") && (
                   <ModuleControlButtons
                     moduleId={module._id}
                     deleteModule={(moduleId) => removeModule(moduleId)}
@@ -99,7 +99,7 @@ export default function Modules() {
                       key={lesson._id}
                       className="wd-lesson list-group-item p-3 ps-1">
                       <BsGripVertical className="me-2 fs-3" /> {lesson.name}
-                      {currentUser.role === "FACULTY" && (
+                      {(currentUser.role === "FACULTY" || currentUser.role === "ADMIN" ) && (
                         <LessonControlButtons />
                       )}
                     </li>
